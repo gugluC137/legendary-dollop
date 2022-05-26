@@ -1,5 +1,6 @@
 package com.biswa.dsa.util;
 
+import java.util.Date;
 import java.util.List;
 
 public class GenericUtils {
@@ -15,4 +16,11 @@ public class GenericUtils {
     list[pos2] = temp;
   }
 
+  public static long getCurrentTimeInMillis() {
+    return System.currentTimeMillis();
+  }
+
+  public static void main(String[] args) {
+    System.out.println(getCurrentTimeInMillis());
+  }
 }
