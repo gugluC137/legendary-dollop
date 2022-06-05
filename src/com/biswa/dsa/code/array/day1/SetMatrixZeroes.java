@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.array;
+package com.biswa.dsa.code.array.day1;
 
 import java.util.Arrays;
 

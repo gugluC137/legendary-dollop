@@ -1,6 +1,5 @@
 package com.biswa.dsa.util;
 
-import java.util.Date;
 import java.util.List;
 
 public class GenericUtils {
