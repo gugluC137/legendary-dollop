@@ -16,15 +16,15 @@ public class Sort012 {
 
         while(pos[1] <= pos[2]) {
             switch (arr[pos[1]]) {
-                case 0 -> {
+                case 0:
                     swap(arr, pos[0], pos[1]);
                     pos[0]++; pos[1]++;
-                }
-                case 1 -> pos[1]++;
-                case 2 -> {
+                    break;
+                case 1:
+                    pos[1]++; break;
+                case 2:
                     swap(arr, pos[1], pos[2]);
                     pos[2]--;
-                }
             }
         }
     }
