@@ -30,6 +30,14 @@ public class GenericUtils {
         }
     }
 
+    public static int sumOfArray(int[] arr, int start, int end) {
+        int sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
     public static long getCurrentTimeInMillis() {
         return System.currentTimeMillis();
     }
