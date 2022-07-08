@@ -14,12 +14,12 @@ public class AddNum {
 
         //add the addend to num,
         //and get if there is a carry overflow
-        boolean carryFlag = addHelper(num, addend);
+        int carry = addHelper(num, addend);
 
         //if there is carry,
         //create a new array and return
         //else return the same modified one
-        if (carryFlag) {
+        if (carry != 0) {
             return getNewArray(num);
         } else {
             return num;
@@ -27,41 +27,28 @@ public class AddNum {
 
     }
 
-    private static boolean addHelper(int[] num, int addend) {
-        boolean carryFlag = false;
+    private static int addHelper(int[] num, int addend) {
+        int carry = addend, sumAtPos;
         for (int i = num.length-1; i >= 0; i--) {
-
-            int sum = num[i];
-            if (i == num.length-1) {
-                sum += addend;
-            } else if (carryFlag) {
-                sum += 1;
-            }
-
-            if (sum <= 9) {
-                num[i] = sum;
-                carryFlag = false;
-                break;
-            } else {
-                num[i] = sum%10;
-                carryFlag = true;
-            }
+            sumAtPos = num[i] + carry;
+            num[i] = sumAtPos%10;
+            carry = sumAtPos/10;
         }
 
-        return carryFlag;
+        return carry;
     }
 
     private static int[] getNewArray(int[] num) {
         int[] newArr = new int[num.length+1];
 
-        System.arraycopy(num, 0, newArr, 1, num.length);
         newArr[0] = 1;
+        System.arraycopy(num, 0, newArr, 1, num.length);
 
         return newArr;
     }
 
     public static void main(String[] args) {
-        int[] num = {1,9};
+        int[] num = {1,2};
         int toAdd = 1;
         System.out.println(Arrays.toString(add(num, toAdd)));
     }
