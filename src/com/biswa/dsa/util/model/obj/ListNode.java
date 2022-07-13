@@ -18,4 +18,23 @@ public class ListNode {
         this.next = next;
     }
 
+    public void printList() {
+        ListNode cur = this;
+        while (null != cur.next) {
+            System.out.print(cur.val + " -> ");
+            cur = cur.next;
+        }
+        System.out.println(cur.val);
+    }
+
+    public int getLength() {
+        ListNode cur = this;
+        int count = 0;
+        while (null != cur) {
+            count++;
+            cur = cur.next;
+        }
+        return count;
+    }
+
 }
