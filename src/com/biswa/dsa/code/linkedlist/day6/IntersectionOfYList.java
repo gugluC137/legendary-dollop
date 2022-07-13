@@ -9,12 +9,14 @@ public class IntersectionOfYList {
         int lB = getLength(headB);
 
         int diff;
-        if (lA > lB) {
-            diff = lA-lB;
-            headA = moveListHead(headA, diff);
-        } else {
-            diff = lB-lA;
-            headB = moveListHead(headB, diff);
+        if (lA != lB) {
+            if (lA > lB) {
+                diff = lA-lB;
+                headA = moveListHead(headA, diff);
+            } else {
+                diff = lB-lA;
+                headB = moveListHead(headB, diff);
+            }
         }
 
         ListNode ans = null;
@@ -45,6 +47,7 @@ public class IntersectionOfYList {
         return l;
     }
 
+    //optimised solution
     public ListNode getIntersectionNodeII(ListNode headA, ListNode headB){
         ListNode nodeA = headA, nodeB = headB;
 
