@@ -1,5 +1,5 @@
 package com.biswa.dsa.util.model.enums;
 
-public enum ArraySide {
+public enum Side {
     RIGHT, LEFT
 }
