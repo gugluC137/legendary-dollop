@@ -34,10 +34,10 @@ public class KthSmallestElement {
         while (true) {
             do {
                 i++;
-            } while (ar[i] > pivot);
+            } while (ar[i] < pivot);
             do {
                 j--;
-            } while (ar[j] < pivot);
+            } while (ar[j] > pivot);
             if (i < j) swap(ar, i, j);
             else return j;
         }
@@ -45,9 +45,12 @@ public class KthSmallestElement {
 
     public static void main(String[] args) {
         KthSmallestElement quickSelect = new KthSmallestElement();
-        int[] array = {-10, 4, 6, 5, 8, -13, 1, 3};
-        int kthLargestElement = quickSelect.selectKthElement(array, 3);
+        int[] array = {-10, 4, 6, 5, 8, -13, 10, 3};
+        int kthLargestElement = quickSelect.selectKthElement(array, 1);
         System.out.println(kthLargestElement);
     }
+
+    // -13, -10, 3, 4, 5, 6, 8, 10
+    // 10, 8, 6, 5, 4, 3, -10, -13
 
 }

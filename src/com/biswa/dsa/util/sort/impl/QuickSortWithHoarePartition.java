@@ -50,7 +50,7 @@ public class QuickSortWithHoarePartition implements SortArray {
     }
 
     public static void main(String[] args) {
-        int[] array = {-10, 4, 6, 4, 8, -13, 1, 3};
+        int[] array = {-10, 4, 6, 5, 8, -13, 10, 3};
         System.out.println(Arrays.toString(array));
         QuickSortWithHoarePartition obj = new QuickSortWithHoarePartition();
         obj.sort(array);
