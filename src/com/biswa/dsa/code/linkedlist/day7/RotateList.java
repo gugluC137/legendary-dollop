@@ -64,11 +64,10 @@ public class RotateList {
     }
 
     public ListNode rotateList(ListNode head, int rotateBy, Side side) {
-        switch (side) {
-            case LEFT: return rotateLeft(head, rotateBy);
-            case RIGHT: return rotateRight(head, rotateBy);
-            default: return new ListNode(0);
-        }
+        return switch (side) {
+            case LEFT -> rotateLeft(head, rotateBy);
+            case RIGHT -> rotateRight(head, rotateBy);
+        };
     }
 
     public static void main(String[] args) {
