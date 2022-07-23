@@ -27,7 +27,7 @@ public class DeleteNodeInLinkedList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
-        if (Objects.isNull(head) || Objects.isNull(head.next)) return null;
+        if (null == head || null == head.next) return null;
 
         ListNode first = head, second = head;
         ListNode secondPrev = null;
@@ -36,13 +36,13 @@ public class DeleteNodeInLinkedList {
             first = first.next;
         }
 
-        while (Objects.nonNull(first)) {
+        while (null != first) {
             first = first.next;
             secondPrev = second;
             second = second.next;
         }
 
-        if (Objects.isNull(secondPrev)) {
+        if (null == secondPrev) {
             head = head.next;
         } else {
             deleteNode(secondPrev, second);
