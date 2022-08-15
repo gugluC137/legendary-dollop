@@ -46,6 +46,7 @@ public class ReverseWordSeq {
 
     public void reverseRecursive(String s, int idx, StringBuilder ans) {
         int nextSpaceIdx = s.indexOf(' ', idx);
+        if (nextSpaceIdx == -1) nextSpaceIdx = s.length();
         String word = s.substring(idx, nextSpaceIdx);
         nextSpaceIdx++;
         while (s.length() > nextSpaceIdx &&
@@ -61,7 +62,7 @@ public class ReverseWordSeq {
     }
 
     public static void main(String[] args) {
-        String s = "  hello world  ";
+        String s = "the sky is blue";
         System.out.println(new ReverseWordSeq().reverseWordsII(s));
     }
 }
