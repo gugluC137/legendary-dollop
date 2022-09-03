@@ -1,5 +1,7 @@
 package com.biswa.dsa.util;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 public class GenericUtils {
@@ -43,6 +45,13 @@ public class GenericUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println(getCurrentTimeInMillis());
+//        System.out.println(getCurrentTimeInMillis());
+        experimentsWithBigDecimal();
+    }
+
+    private static void experimentsWithBigDecimal() {
+        BigDecimal a = BigDecimal.ZERO.setScale(3, RoundingMode.HALF_UP);
+
+        System.out.println(a.add(BigDecimal.TEN));
     }
 }
