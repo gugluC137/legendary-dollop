@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class SetMatrixZeroes {
 
+    //space: O(m+n)
+    //Time: O(2mn)
   public void solve(int[][] matrix) {
 
       int rowLength = matrix.length;
