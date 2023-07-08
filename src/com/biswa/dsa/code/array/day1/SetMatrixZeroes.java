@@ -36,6 +36,8 @@ public class SetMatrixZeroes {
 
   }
 
+  //Time O(2mn)
+  //Space O(1)
   public void solveOptimised(int[][] matrix) {
     int rowLength = matrix.length;
     int columnLength = matrix[0].length;

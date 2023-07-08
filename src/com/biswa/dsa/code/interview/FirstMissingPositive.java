@@ -1,7 +1,8 @@
-package com.biswa.dsa.code.random;
+package com.biswa.dsa.code.interview;
 
 import static com.biswa.dsa.util.GenericUtils.swap;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
@@ -10,25 +11,23 @@ import java.util.Set;
 public class FirstMissingPositive {
 
   public int firstMissingPositive(int[] nums) {
+    int l = nums.length;
+    int[] res = new int[l];
+    Arrays.fill(res, 0);
 
-    PriorityQueue<Integer> list = new PriorityQueue<>();
-    Set<Integer> numSet = new HashSet<>();
-
-    for (int i: nums) {
-      if (!numSet.contains(i) && i > 0) {
-        list.add(i);
-        numSet.add(i);
+    for (int i = 0; i < l; i++) {
+      if(nums[i] > 0 && nums[i] <= l) {
+        res[nums[i] - 1] = 1;
       }
     }
 
-    int missing = 1;
-    while (!list.isEmpty()) {
-      int i = list.poll();
-      if (i != missing) break;
-      missing++;
+    int i = 0;
+    while (i < l) {
+      if (res[i] == 0) break;
+      i++;
     }
 
-    return missing;
+    return i+1;
   }
 
   public static void main(String[] args) {

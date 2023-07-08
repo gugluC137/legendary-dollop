@@ -5,6 +5,10 @@ import java.util.List;
 
 public class MaximumProfit {
 
+    //Brute force will be to compare each day's buying price with selling price of all days beyond
+    //2nd Brute force will be to find out the largest selling price after a certain day, selling on that day will give the max profit if you buy at the day
+    //the 2nd approach leads to the solution provided below
+
     public static int maximumProfit(List<Integer> list) {
         int b, s, profit; //temp
         int buy, sell, maxProfit = 0; //final ans
