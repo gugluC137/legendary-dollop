@@ -17,6 +17,14 @@ public class GenericUtils {
         list[pos2] = temp;
     }
 
+    public int maxOf3(int a, int b, int c) {
+        return Math.max(a, Math.max(b, c));
+    }
+
+    public int minOf3(int a, int b, int c) {
+        return Math.min(a, Math.min(b, c));
+    }
+
     /**
      * sort an array which just has the first element out of place
      *

@@ -2,6 +2,7 @@ package com.biswa.dsa.code.dp;
 
 import java.util.Arrays;
 
+//https://www.codingninjas.com/studio/problems/ninja-s-training_3621003
 public class NinjaTraining {
 
     public int solWithRecursion(int day, int lastTask, int[][] points) {
