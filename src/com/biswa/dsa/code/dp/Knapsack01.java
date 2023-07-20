@@ -29,9 +29,9 @@ public class Knapsack01 {
 
         int pick = 0;
         if (maxWeight >= weight[n]) {
-            pick = value[n] + solWithRecursion(weight, value, n-1, maxWeight-weight[n]);
+            pick = value[n] + solWithMemoization(weight, value, n-1, maxWeight-weight[n], dp);
         }
-        int notPick = solWithRecursion(weight, value, n-1, maxWeight);
+        int notPick = solWithMemoization(weight, value, n-1, maxWeight, dp);
 
         return dp[n][maxWeight] = Math.max(pick, notPick);
     }

@@ -1,9 +1,10 @@
-package com.biswa.dsa.code.tree;
+package com.biswa.dsa.code.binary_tree;
 
 import com.biswa.dsa.util.model.obj.TreeNode;
 
 public class BalancedBinaryTree {
 
+  //balanced BT: | if height(left) - height(right) | <= 1
   public boolean isBalanced(TreeNode root) {
     return helper(root) != -1;
   }
