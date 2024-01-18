@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.binary_tree;
+package com.biswa.dsa.code.binary_tree.part1;
 
 import com.biswa.dsa.util.model.obj.TreeNode;
 import java.util.ArrayList;
