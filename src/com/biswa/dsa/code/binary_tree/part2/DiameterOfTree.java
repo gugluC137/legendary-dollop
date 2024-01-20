@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.binary_tree.part1;
+package com.biswa.dsa.code.binary_tree.part2;
 
 import com.biswa.dsa.util.model.obj.TreeNode;
 
