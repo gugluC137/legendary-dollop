@@ -21,8 +21,8 @@ public class HireWorkers {
         pr2.add(costs[idx2--]);
       }
 
-      int e1 = pr1.size() > 0 ? pr1.peek() : Integer.MAX_VALUE;
-      int e2 = pr2.size() > 0 ? pr2.peek() : Integer.MAX_VALUE;
+      int e1 = !pr1.isEmpty() ? pr1.peek() : Integer.MAX_VALUE;
+      int e2 = !pr2.isEmpty() ? pr2.peek() : Integer.MAX_VALUE;
 
       if (e1 <= e2) {
         cost += e1;
