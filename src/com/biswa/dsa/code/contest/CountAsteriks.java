@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.biweekly81;
+package com.biswa.dsa.code.contest;
 
 public class CountAsteriks {
 

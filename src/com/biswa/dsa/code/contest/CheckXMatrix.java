@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest299;
+package com.biswa.dsa.code.contest;
 
 public class CheckXMatrix {
 

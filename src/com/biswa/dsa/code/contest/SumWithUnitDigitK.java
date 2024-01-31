@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest298;
+package com.biswa.dsa.code.contest;
 
 /*
 Given two integers num and k, consider a set of positive integers with the following properties:

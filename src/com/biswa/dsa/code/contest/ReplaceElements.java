@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest296;
+package com.biswa.dsa.code.contest;
 
 /*
 You are given a 0-indexed array nums that consists of n distinct positive integers.

@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest318;
+package com.biswa.dsa.code.contest;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest296;
+package com.biswa.dsa.code.contest;
 
 public class TextEditor {
     StringBuilder string;

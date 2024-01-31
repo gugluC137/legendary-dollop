@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest296;
+package com.biswa.dsa.code.contest;
 
 import com.biswa.dsa.util.model.enums.Side;
 import java.util.Arrays;

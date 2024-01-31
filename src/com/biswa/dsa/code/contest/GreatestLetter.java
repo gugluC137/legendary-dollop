@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest298;
+package com.biswa.dsa.code.contest;
 
 /*
 Given a string of English letters s,

@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest342;
+package com.biswa.dsa.code.contest;
 
 public class SumMultiple {
     public int solution(int n) {

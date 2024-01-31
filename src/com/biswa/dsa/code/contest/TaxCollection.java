@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest297;
+package com.biswa.dsa.code.contest;
 
 public class TaxCollection {
 

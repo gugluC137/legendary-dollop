@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.contest.contest300;
+package com.biswa.dsa.code.contest;
 
 import java.util.HashMap;
 import java.util.Map;
