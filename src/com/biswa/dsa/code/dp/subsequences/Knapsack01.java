@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.subsequences;
 
 public class Knapsack01 {
 

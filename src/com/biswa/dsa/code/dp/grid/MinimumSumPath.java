@@ -1,8 +1,6 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.grid;
 
-import java.util.Arrays;
-
-//https://www.codingninjas.com/studio/problems/minimum-path-sum_985349
+//https://leetcode.com/problems/minimum-path-sum/
 public class MinimumSumPath {
 
     //TC: O(2^(row*col))

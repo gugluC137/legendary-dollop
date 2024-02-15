@@ -1,6 +1,7 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.grid;
 
-//https://www.codingninjas.com/studio/problems/maximum-path-sum-in-the-matrix_797998
+//Max variant: https://www.codingninjas.com/studio/problems/maximum-path-sum-in-the-matrix_797998
+//Min variant: https://leetcode.com/problems/minimum-falling-path-sum/
 public class MaximumPathSumVariableStartEnd {
 
     //TC: exponential + O(col)
@@ -97,6 +98,40 @@ public class MaximumPathSumVariableStartEnd {
         }
 
         return maxPathSum;
+    }
+
+    //TC: O(row*col) + O(col)
+    //SC: O(col)
+    public int MinVariant(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+        int[] prev = new int[col];
+
+        for (int i = 0; i < col; i++) {
+            prev[i] = matrix[0][i];
+        }
+
+        for (int i = 1; i < row; i++) {
+            int[] cur = new int[col];
+            for (int j = 0; j < col; j++) {
+                int up = Integer.MAX_VALUE, ld = Integer.MAX_VALUE, rd = Integer.MAX_VALUE;
+
+                up = prev[j];
+                if (j != 0) ld = prev[j-1];
+                if (j != col-1) rd = prev[j+1];
+
+                cur[j] = matrix[i][j] + Math.min(rd, Math.min(up, ld));
+            }
+            prev = cur;
+        }
+
+        int minPathSum = Integer.MAX_VALUE;
+        for (int i = 0; i < col; i++) {
+            if (minPathSum > prev[i]) minPathSum = prev[i];
+        }
+
+        return minPathSum;
     }
 
     public static void main(String[] args) {

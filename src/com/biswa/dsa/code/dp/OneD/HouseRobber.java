@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.OneD;
 
 public class HouseRobber {
     public int solWithSpaceOptimisation(int n, int[] nums) {

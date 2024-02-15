@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.stocks;
 
 public class BuySellStock1 {
     public int maxProfit(int[] prices) {

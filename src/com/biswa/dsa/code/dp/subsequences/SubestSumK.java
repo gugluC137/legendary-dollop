@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.dp.subsequences;
 
 //https://www.codingninjas.com/studio/problems/1550954
 public class SubestSumK {
