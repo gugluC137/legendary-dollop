@@ -1,7 +1,6 @@
-package com.biswa.dsa.code.random;
+package com.biswa.dsa.code.daily;
 
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.PriorityQueue;
 
 //https://leetcode.com/problems/furthest-building-you-can-reach
@@ -183,42 +182,30 @@ public class FurthestBuilding {
 
     // Greedy solution -------------------------------------------------------------------------------------------------
 
-    //TODO
+
     public int furthestBuildingGreedy(int[] heights, int bricks, int ladders) {
 
         PriorityQueue<Integer> heightsForLadderUse = new PriorityQueue<>();
-        int i = 0;
-        for (;i < heights.length - 1; i++) {
 
-            if (heights[i] >= heights[i+1]) {
-                continue;
-            }
-
-            if (ladders == 0 && bricks == 0) {
-                break;
-            }
-
+        for (int i = 0; i < heights.length - 1; i++) {
             int diff = heights[i+1] - heights[i];
-            if (ladders > 0) {
-                heightsForLadderUse.add(diff);
-                ladders--;
+
+            if (diff <= 0) {
                 continue;
             }
 
-            int bricksToBeUsed;
-            if (!heightsForLadderUse.isEmpty() && heightsForLadderUse.peek() < diff) {
-                bricksToBeUsed = heightsForLadderUse.poll();
-            } else {
-                bricksToBeUsed = diff;
+            heightsForLadderUse.add(diff);
+
+            if (!heightsForLadderUse.isEmpty() && heightsForLadderUse.size() > ladders) {
+                bricks -= heightsForLadderUse.poll();
             }
 
-            bricks -= bricksToBeUsed;
             if (bricks < 0) {
-                break;
+                return i;
             }
         }
 
-        return i;
+        return heights.length - 1;
     }
 
     public static void main(String[] args) {
