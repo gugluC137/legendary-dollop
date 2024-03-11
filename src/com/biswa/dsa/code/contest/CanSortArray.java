@@ -1,5 +1,9 @@
 package com.biswa.dsa.code.contest;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 import static com.biswa.dsa.util.GenericUtils.swap;
 
 public class CanSortArray {
@@ -37,5 +41,12 @@ public class CanSortArray {
         }
 
         return c;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {6,2,3,4,5};
+
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

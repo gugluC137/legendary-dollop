@@ -1,11 +1,8 @@
-package com.biswa.dsa.code.interview;
+package com.biswa.dsa.code.interview.carwale;
 
 import static com.biswa.dsa.util.GenericUtils.swap;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Set;
 
 // https://leetcode.com/problems/first-missing-positive/description/
 public class FirstMissingPositive {

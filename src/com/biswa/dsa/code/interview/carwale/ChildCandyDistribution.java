@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.interview;
+package com.biswa.dsa.code.interview.carwale;
 
 import java.util.Arrays;
 
