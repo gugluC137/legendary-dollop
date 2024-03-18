@@ -72,6 +72,7 @@ public class NextPermutationForNum {
     }
 
     public int getNoOfDigits(int num) {
+        //return (int)Math.log10(num) + 1;
         int d = 0;
         while(num > 0) {
             d++;
