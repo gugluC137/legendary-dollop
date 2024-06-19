@@ -62,4 +62,8 @@ public class GenericUtils {
 
         System.out.println(a.add(BigDecimal.TEN));
     }
+
+    public static int[] getIntArrayFromIntList(List<Integer> list) {
+        return list.stream().mapToInt(Integer::intValue).toArray();
+    }
 }

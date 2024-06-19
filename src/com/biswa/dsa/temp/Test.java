@@ -1,5 +1,4 @@
 package com.biswa.dsa.temp;
 
-public class Solution {
-
+public class Test {
 }

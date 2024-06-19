@@ -84,6 +84,7 @@ public class LongestCommonSubsequence {
 
         for (int i = 1; i <= size1; i++) {
             int[] cur = new int[size2+1];
+            cur[0] = 0;
             for (int j = 1; j <= size2; j++) {
                 if (text1.charAt(i-1) == text2.charAt(j-1)) {
                     cur[j] = 1 + prev[j-1];
@@ -97,6 +98,44 @@ public class LongestCommonSubsequence {
         return prev[size2];
     }
 
+    public String getLCS(String text1, String text2) {
+        int size1 = text1.length(), size2 = text2.length();
+
+        int[][] dp = new int[size1+1][size2+1];
+
+        //base condition
+        Arrays.fill(dp[0], 0);
+        for (int i = 0; i <= size1; i++) {
+            dp[i][0] = 0;
+        }
+
+        for (int i = 1; i <= size1; i++) {
+            for (int j = 1; j <= size2; j++) {
+                if (text1.charAt(i-1) == text2.charAt(j-1)) {
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                } else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+
+        StringBuilder s = new StringBuilder();
+        int i = size1, j = size2;
+        while (i > 0 && j > 0) {
+            if (dp[i][j] == dp[i-1][j]) {
+                i = i-1;
+            } else if(dp[i][j] == dp[i][j-1]) {
+                j = j-1;
+            } else {
+                s.append(text1.charAt(i-1));
+                i = i-1;
+                j = j-1;
+            }
+        }
+
+        return s.reverse().toString();
+    }
+
     public static void main(String[] args) {
         String text1 = "abce";
         String text2 = "dabfce";
@@ -104,5 +143,6 @@ public class LongestCommonSubsequence {
         System.out.println(new LongestCommonSubsequence().longestCommonSubsequence(text1, text2));
         System.out.println(new LongestCommonSubsequence().solWithTab(text1, text2));
         System.out.println(new LongestCommonSubsequence().solWithSO(text1, text2));
+        System.out.println(new LongestCommonSubsequence().getLCS(text1, text2));
     }
 }
