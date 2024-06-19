@@ -28,48 +28,49 @@ public class HashMapNotes {
         System.out.println("p1 == p2 : " + (p1 == p2));
         System.out.println("p1.equals(p2) : " + p1.equals(p2));
     }
-}
 
-class Person implements Comparable<Person> {
-    String name;
-    String lastName;
-    int phone;
 
-    Person(String name, String lastName, int phone) {
-        this.name = name;
-        this.lastName = lastName;
-        this.phone = phone;
-    }
+    static class Person implements Comparable<Person> {
+        String name;
+        String lastName;
+        int phone;
 
-    @Override
-    public int hashCode() {
-        return name.hashCode() + lastName.hashCode() + phone;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if(obj == null) {
-            throw new NullPointerException("Object entered is empty");
-        } else if(obj.getClass()!=this.getClass()) {
-            throw new IllegalArgumentException("Object entered is not Person");
-        } else{
-            Person p = (Person) obj;
-            return this.name.equals(p.name)
-                && this.lastName.equals(p.lastName)
-                && this.phone == p.phone;
+        Person(String name, String lastName, int phone) {
+            this.name = name;
+            this.lastName = lastName;
+            this.phone = phone;
         }
-    }
 
-    @Override
-    public String toString() {
-        return "{" + this.name + ", " + this.lastName + ", " + this.phone + "}";
-    }
-
-    @Override
-    public int compareTo(Person o) {
-        if(o == null){
-            throw new NullPointerException("Object entered is empty");
+        @Override
+        public int hashCode() {
+            return name.hashCode() + lastName.hashCode() + phone;
         }
-        return o.lastName.compareTo(this.lastName);
+
+        @Override
+        public boolean equals(Object obj) {
+            if(obj == null) {
+                throw new NullPointerException("Object entered is empty");
+            } else if(obj.getClass()!=this.getClass()) {
+                throw new IllegalArgumentException("Object entered is not Person");
+            } else{
+                Person p = (Person) obj;
+                return this.name.equals(p.name)
+                    && this.lastName.equals(p.lastName)
+                    && this.phone == p.phone;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "{" + this.name + ", " + this.lastName + ", " + this.phone + "}";
+        }
+
+        @Override
+        public int compareTo(Person o) {
+            if(o == null){
+                throw new NullPointerException("Object entered is empty");
+            }
+            return o.lastName.compareTo(this.lastName);
+        }
     }
 }
