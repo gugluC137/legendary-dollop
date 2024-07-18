@@ -5,6 +5,8 @@ import com.biswa.dsa.util.model.obj.Pair;
 import java.util.ArrayDeque;
 
 public class FloodFill {
+
+    //tried to do dfs using iteration. this is not bfs
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
         int srcColor = image[sr][sc];
 

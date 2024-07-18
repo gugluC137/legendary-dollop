@@ -8,7 +8,7 @@ public class FurthestBuilding {
 
     //---------------- DP solutions ------------------------------------------------------------------------------------
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
-        //return helper(heights, bricks, ladders, 0);
+        //return isPossible(heights, bricks, ladders, 0);
 
         int[][][] dp = new int[heights.length][ladders+1][bricks+1];
         for (int i = 0; i < heights.length; i++) {
@@ -84,7 +84,7 @@ public class FurthestBuilding {
     }
 
     public int helperTab(int[] heights, int bricks, int ladders) {
-        //return helper(heights, bricks, ladders, 0);
+        //return isPossible(heights, bricks, ladders, 0);
 
         int[][][] dp = new int[heights.length][ladders+1][bricks+1];
         //base case: all values at last 2d matrix is heights.length - 1;

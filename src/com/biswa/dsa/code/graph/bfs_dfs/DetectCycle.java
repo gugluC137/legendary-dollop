@@ -1,5 +1,52 @@
 package com.biswa.dsa.code.graph.bfs_dfs;
 
-public class DetectCycle {
+import java.util.ArrayDeque;
+import java.util.Arrays;
 
+//https://leetcode.com/problems/course-schedule/
+public class DetectCycle {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[][] cons = new int[numCourses][numCourses];
+        for (int[] c : cons) {
+            Arrays.fill(c, 0);
+        }
+        boolean[] vis = new boolean[numCourses];
+        Arrays.fill(vis, false);
+
+        for (int[] d: prerequisites) {
+            cons[d[0]][d[1]] = 1;
+        }
+
+        for (int[] d: prerequisites) {
+            if (hasCycle(numCourses, d[0], cons, vis)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean hasCycle(int numCourses, int course, int[][] cons, boolean[] vis) {
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        q.offer(course);
+        vis[course] = true;
+        while (!q.isEmpty()) {
+            int c = q.poll();
+
+            for (int i = 0; i < numCourses; i++) {
+                if (cons[c][i] == 1) {
+                    if (vis[i]) return true;
+
+                    q.offer(i);
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[][] arr = {{1,0},{1,2},{3,1},{3,4}};
+        System.out.println(new DetectCycle().canFinish(5, arr));
+    }
 }
