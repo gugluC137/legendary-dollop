@@ -3,6 +3,8 @@ package com.biswa.dsa.code.binarySearch;
 import java.util.ArrayList;
 import java.util.List;
 
+//similar
+//https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/
 public class AllocateBooks {
     public int findPages(ArrayList<Integer> arr, int n, int m) {
         if (n < m) return -1;

@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.jumpgame;
 
 public class JumpGame2 {
     public int jumpTabulation(int[] nums) {
@@ -33,6 +33,24 @@ public class JumpGame2 {
         }
 
         return minJumps;
+    }
+
+    //TC: O(N)
+    //SC: O(1)
+    public int jumpGreedy(int[] nums) {
+        int l = 0, r = 0;
+        int jumps = 0;
+        while (r < nums.length-1) {
+            int max = Integer.MIN_VALUE;
+            for (int i = l; i <= r; i++) {
+                max = Math.max(max, i + nums[i]);
+            }
+            l = r+1;
+            r = max;
+            jumps++;
+        }
+
+        return jumps;
     }
 
     public static void main(String[] args) {

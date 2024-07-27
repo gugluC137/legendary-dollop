@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.daily;
+package com.biswa.dsa.code.greedy;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

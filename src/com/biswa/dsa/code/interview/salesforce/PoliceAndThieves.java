@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.salesforce;
+package com.biswa.dsa.code.interview.salesforce;
 
 import java.util.HashSet;
 import java.util.Set;

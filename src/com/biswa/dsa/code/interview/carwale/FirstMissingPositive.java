@@ -1,8 +1,8 @@
 package com.biswa.dsa.code.interview.carwale;
 
-import static com.biswa.dsa.util.GenericUtils.swap;
-
 import java.util.Arrays;
+
+import static com.biswa.dsa.util.GenericUtils.swap;
 
 // https://leetcode.com/problems/first-missing-positive/description/
 public class FirstMissingPositive {
@@ -33,7 +33,8 @@ public class FirstMissingPositive {
   }
 
   public int firstMissingPositiveI(int[] nums) {
-
+    //this part makes sure to transfer the positive integers between [1, n], where n = nums.length-1,
+    //to their correct position in the array. correct position for
     int i = 0;
     while(i < nums.length) {
       int correct = nums[i] - 1;
@@ -43,6 +44,7 @@ public class FirstMissingPositive {
         i++;
       }
     }
+
 
     for (int index = 0 ; index < nums.length; index++) {
       if(nums[index] != index + 1) {

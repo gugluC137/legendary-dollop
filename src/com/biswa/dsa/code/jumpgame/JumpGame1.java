@@ -1,14 +1,15 @@
-package com.biswa.dsa.code.dp;
+package com.biswa.dsa.code.jumpgame;
 
 import java.util.Arrays;
 
+//https://leetcode.com/problems/jump-game/description/
 public class JumpGame1 {
 
     //recursive solution
     public boolean canJump(int[] nums) {
 //        int[] dp = new int[nums.length];
 //        Arrays.fill(dp, -1);
-//        return canJumMemoization(nums, 0, dp);
+//        return canJumpMemoization(nums, 0, dp);
 
         return canJumpTabulation(nums);
     }
@@ -31,7 +32,7 @@ public class JumpGame1 {
         return false;
     }
 
-    public boolean canJumMemoization(int[] nums, int i, int[] dp) {
+    public boolean canJumpMemoization(int[] nums, int i, int[] dp) {
         if (i == nums.length - 1) {
             return true;
         }
@@ -43,7 +44,7 @@ public class JumpGame1 {
 
         int pos = i+1;
         while (pos < nums.length && pos <= i + nums[i]) {
-            dp[pos] = canJumMemoization(nums, pos, dp) ? 1 : 0;
+            dp[pos] = canJumpMemoization(nums, pos, dp) ? 1 : 0;
             if (dp[pos] == 1) {
                 return true;
             }
@@ -82,7 +83,19 @@ public class JumpGame1 {
         }
 
         return canReachPoint == 0;
+    }
 
+    public boolean canJumpGreedy(int[] nums) {
+        var maxReached = 0;
+        var pos = 0;
+        while (maxReached < nums.length && pos <= maxReached) {
+            if (pos+nums[pos] > maxReached) {
+                maxReached = pos+nums[pos];
+            }
+            pos++;
+        }
+
+        return maxReached >= nums.length-1;
     }
 
     public static void main(String[] args) {
