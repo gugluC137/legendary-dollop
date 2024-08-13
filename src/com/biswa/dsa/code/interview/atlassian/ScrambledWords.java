@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.atlassian;
+package com.biswa.dsa.code.interview.atlassian;
 
 /*
 You are running a classroom and suspect that some of your students are passing around the answer to a multiple-choice

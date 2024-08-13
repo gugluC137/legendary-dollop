@@ -194,7 +194,7 @@ public class FurthestBuilding {
                 continue;
             }
 
-            heightsForLadderUse.add(diff);
+            heightsForLadderUse.offer(diff);
 
             if (!heightsForLadderUse.isEmpty() && heightsForLadderUse.size() > ladders) {
                 bricks -= heightsForLadderUse.poll();

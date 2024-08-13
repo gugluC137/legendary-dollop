@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.atlassian;
+package com.biswa.dsa.code.interview.atlassian;
 
 /* You are working on a video game where the player has to go through a level without falling into any obstacles.
 

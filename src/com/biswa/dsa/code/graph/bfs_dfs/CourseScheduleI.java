@@ -3,7 +3,7 @@ package com.biswa.dsa.code.graph.bfs_dfs;
 import java.util.Arrays;
 
 //https://leetcode.com/problems/course-schedule/
-public class DetectCycle {
+public class CourseScheduleI {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[][] cons = new int[numCourses][numCourses];
         for (int[] c : cons) {
@@ -40,6 +40,6 @@ public class DetectCycle {
 
     public static void main(String[] args) {
         int[][] arr = {{1,0},{1,2},{3,1},{3,4}};
-        System.out.println(new DetectCycle().canFinish(5, arr));
+        System.out.println(new CourseScheduleI().canFinish(5, arr));
     }
 }

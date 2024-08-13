@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.atlassian;
+package com.biswa.dsa.code.interview.atlassian;
 
 import com.biswa.dsa.util.model.obj.Index;
 

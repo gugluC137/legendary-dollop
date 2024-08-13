@@ -1,4 +1,4 @@
-package com.biswa.dsa.code.atlassian;
+package com.biswa.dsa.code.interview.atlassian;
 
 // https://leetcode.com/problems/rank-teams-by-votes/
 

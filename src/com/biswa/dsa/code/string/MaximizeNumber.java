@@ -8,6 +8,7 @@ public class MaximizeNumber {
         int pos = -1;
 
         for(int i = 0; i < num.length()-1; i++) {
+            //
             if(number.charAt(i) == digit && number.charAt(i+1) > number.charAt(i)) {
                 pos = i; break;
             }
