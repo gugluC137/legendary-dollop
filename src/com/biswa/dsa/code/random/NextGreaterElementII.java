@@ -7,5 +7,6 @@ public class NextGreaterElementII {
         for (int i = 0; i < nums.length; i++) {
 
         }
+        return null;
     }
 }

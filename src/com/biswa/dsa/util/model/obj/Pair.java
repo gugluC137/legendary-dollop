@@ -14,11 +14,6 @@ public class Pair implements Comparable<Pair> {
             return false;
         }
         return this.x == obj.x && this.y == obj.y;
-
-//        if (o instanceof Pair obj) {
-//            return this.x == obj.x && this.y == obj.y;
-//        }
-//        return false;
     }
 
     public int hashCode() {
@@ -28,5 +23,10 @@ public class Pair implements Comparable<Pair> {
     public int compareTo(Pair p) {
         if (this.x == p.x) return this.y - p.y;
         return this.x - p.x;
+    }
+
+    @Override
+    public String toString() {
+        return x + ": " + y;
     }
 }
