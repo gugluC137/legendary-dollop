@@ -3,30 +3,33 @@ package com.biswa.dsa.code.graph.intro;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Traversals {
 
     //TC for undirected graph: O(V) + O(2 x no of edges) [2nd part is of summation of degrees]
     //TC for directed graph: O(V) + O(no of edges)
-    //SC: O(V) [for the queue]
-    public ArrayList<Integer> bfs(int V, ArrayList<ArrayList<Integer>> adj) {
-        ArrayList<Integer> ans = new ArrayList<>(V);
+    //SC: O(2V) [for the queue and visited array]
+    public List<Integer> bfs(int V, List<List<Integer>> adj) {
+        var ans = new ArrayList<Integer>(V);
 
-        boolean[] vis = new boolean[V];
-        Arrays.fill(vis, false);
+        var visited = new boolean[V];
+        Arrays.fill(visited, false);
 
-        ArrayDeque<Integer> q = new ArrayDeque<>();
+        var q = new ArrayDeque<Integer>();
         q.offer(0);
-        vis[0] = true;
+        visited[0] = true;
 
         while (!q.isEmpty()) {
-            int node = q.poll();
+            var node = q.poll();
+
+            //this represents any process that needs to be done on each node
             ans.add(node);
 
-            for (int n : adj.get(node)) {
-                if (!vis[n]) {
+            for (var n : adj.get(node)) {
+                if (!visited[n]) {
                     q.offer(n);
-                    vis[n] = true;
+                    visited[n] = true;
                 }
             }
         }
@@ -37,23 +40,53 @@ public class Traversals {
 
     //TC for undirected graph: O(V) + O(2 x no of edges) [2nd part is of summation of degrees]
     //TC for directed graph: O(V) + O(no of edges)
-    //SC: O(V) [for the recursion stack ]
-    public ArrayList<Integer> dfs(int V, ArrayList<ArrayList<Integer>> adj) {
-        ArrayList<Integer> ans = new ArrayList<>(V);
-        boolean[] vis = new boolean[V];
-        Arrays.fill(vis, false);
-        dfs(0, vis, adj, ans);
+    //SC: O(V) [for the recursion stack, visited array]
+    public List<Integer> dfs_recursive(int V, List<List<Integer>> adj) {
+        var ans = new ArrayList<Integer>(V);
+        var visited = new boolean[V];
+        Arrays.fill(visited, false);
+
+        dfs(0, visited, adj, ans);
+
         return ans;
     }
 
-    public void dfs(int node, boolean[] vis, ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> ans) {
-        vis[node] = true;
+    public void dfs(int node, boolean[] visited, List<List<Integer>> adj, List<Integer> ans) {
+        visited[node] = true;
+
+        //this represents any process that needs to be done on each node
         ans.add(node);
 
-        for (int n : adj.get(node)) {
-            if (!vis[n]) {
-                dfs(n, vis, adj, ans);
+        for (var n : adj.get(node)) {
+            if (!visited[n]) {
+                dfs(n, visited, adj, ans);
             }
         }
+    }
+
+    public List<Integer> dfs_iterative(int V, List<List<Integer>> adj) {
+        var ans = new ArrayList<Integer>(V);
+
+        var visited = new boolean[V];
+        Arrays.fill(visited, false);
+
+        var stack = new ArrayDeque<Integer>();
+        stack.push(0);
+        visited[0] = true;
+
+        while (!stack.isEmpty()) {
+            int node = stack.pop();
+
+            ans.add(node);
+
+            for (var n: adj.get(node)) {
+                if (!visited[n]) {
+                    stack.push(n);
+                    visited[n] = true;
+                }
+            }
+        }
+
+        return ans;
     }
 }

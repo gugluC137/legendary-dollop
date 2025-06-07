@@ -2,6 +2,9 @@ package com.biswa.dsa.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class GenericUtils {
@@ -52,11 +55,6 @@ public class GenericUtils {
         return System.currentTimeMillis();
     }
 
-    public static void main(String[] args) {
-//        System.out.println(getCurrentTimeInMillis());
-        experimentsWithBigDecimal();
-    }
-
     private static void experimentsWithBigDecimal() {
         BigDecimal a = BigDecimal.ZERO.setScale(3, RoundingMode.HALF_UP);
 
@@ -65,5 +63,26 @@ public class GenericUtils {
 
     public static int[] getIntArrayFromIntList(List<Integer> list) {
         return list.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static final ZoneId DUBAI_ZONE = ZoneId.of("Asia/Dubai");
+    public static final ZoneId UTC_ZONE = ZoneId.of("UTC");
+
+    public static void testDate() {
+        var dateTime = "27-01-2025 10:30:00";
+        var df = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+        System.out.println(LocalDateTime.parse(dateTime, df));
+        System.out.println(LocalDateTime.parse(dateTime, df).atZone(DUBAI_ZONE).toLocalDateTime());
+        System.out.println(LocalDateTime.parse(dateTime, df)
+            .atZone(DUBAI_ZONE)
+            .withZoneSameInstant(UTC_ZONE)
+            .toLocalDateTime());
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(LocalDateTime.now());
+        testDate();
     }
 }
